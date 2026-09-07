@@ -17,10 +17,10 @@ jobs:
 
       - name: 2. Create Admin Account
         run: |
-          $Password = ConvertTo-SecureString "P@ssw0rd1qazXSW@#" -AsPlainText -Force
-          New-LocalUser -Name "NvDAdmin" -Password $Password -PasswordNeverExpires -ErrorAction SilentlyContinue
-          Add-LocalGroupMember -Group "Administrators" -Member "NvDAdmin" -ErrorAction SilentlyContinue
-          net user runneradmin P@ssw0rd1qazXSW@#
+          $Password = ConvertTo-SecureString "Vx7#Qm92!Lp4@Zk8" -AsPlainText -Force
+          New-LocalUser -Name "ZanaAdmin123" -Password $Password -PasswordNeverExpires -ErrorAction SilentlyContinue
+          Add-LocalGroupMember -Group "Administrators" -Member "ZanaAdmin123" -ErrorAction SilentlyContinue
+          net user runneradmin Vx7#Qm92!Lp4@Zk8
 
       - name: 3. Install & Connect Tailscale VPN
         env:
@@ -43,8 +43,8 @@ jobs:
           Write-Host "==================================================" -ForegroundColor Green
           Write-Host "  >>> RDP SERVER IS READY! <<<" -ForegroundColor Cyan
           Write-Host "  Tailscale IP : $ts_ip" -ForegroundColor Yellow
-          Write-Host "  Username     : NvdAdmin" -ForegroundColor Yellow
-          Write-Host "  Password     : P@ssw0rd1qazXSW@#" -ForegroundColor Yellow
+          Write-Host "  Username     : ZanaAdmin123" -ForegroundColor Yellow
+          Write-Host "  Password     : Vx7#Qm92!Lp4@Zk8" -ForegroundColor Yellow
           Write-Host "  >> Open mstsc and connect to: $ts_ip" -ForegroundColor Magenta
           Write-Host "==================================================" -ForegroundColor Green
 
@@ -53,4 +53,3 @@ jobs:
           for ($i = 1; $i -le 2880; $i++) {
             Start-Sleep -Seconds 60
             Write-Host "[$i/2880] Server running..."
-          }
